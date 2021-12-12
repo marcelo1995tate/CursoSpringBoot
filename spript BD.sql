@@ -15,3 +15,4 @@ create table if not exists  usuarios (
  insert into usuarios  (nombre,apellido,telefono,email,password) values ('Juan','Perez','4321-1341','juan@gmail.com','123abc'); 
  insert into usuarios  (nombre,apellido,telefono,email,password) values ('Maria','Suarez','7898-1341','maria@gmail.com','123abc'); 
  insert into usuarios  (nombre,apellido,telefono,email,password) values ('Ana','Alvarez','8523-1341','ana@gmail.com','123abc');
+ insert into usuarios  (nombre,apellido,telefono,email,password) values ('Ultimo','Alvarez','8523-1341','ana@gmail.com','123abc');

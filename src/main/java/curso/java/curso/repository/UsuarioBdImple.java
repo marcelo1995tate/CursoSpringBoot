@@ -2,15 +2,23 @@ package curso.java.curso.repository;
 
 import curso.java.curso.Model.Usuario;
 import org.springframework.stereotype.Repository;
-
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
 @Transactional
 public class UsuarioBdImple implements UsuarioDB{
+
+    @PersistenceContext
+    private EntityManager em;
+
     @Override
+    @Transactional
     public List<Usuario> getUsuarios() {
-        return null;
+        String query="FROM Usuario";
+         return em.createQuery(query).getResultList();
     }
 
     @Override
@@ -20,7 +28,8 @@ public class UsuarioBdImple implements UsuarioDB{
 
     @Override
     public void deleteUsuario(Long id) {
-
+        Usuario usuario=em.find(Usuario.class, id);
+        em.remove(usuario);
     }
 
     @Override
