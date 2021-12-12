@@ -21,6 +21,7 @@ for(let aux of usuarios)
       "               <td>"+aux.nombre+"</td>\n" +
       "               <td>"+aux.apellido+"</td>\n" +
       "               <td>"+aux.email+"</td>\n" +
+      "               <td>"+aux.telefono+"</td>\n" +
       "               <td class=\"d-flex justify-content-around\">" +
       "                     <buton class=\"btn btn-danger\">Borrar</buton>" +
       "                     <buton class=\"btn btn-warning\">Actualizar</buton>" +
