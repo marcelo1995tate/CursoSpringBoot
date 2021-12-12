@@ -14,13 +14,13 @@ async function cargarUsuarios() {
   });
   const usuarios = await request.json();
   let usuario="";
-for(let i = 0;i<usuarios.length;i++)
+for(let aux of usuarios)
 {
   usuario+= "<tr class=\"text-center\">\n" +
-      "               <td>"+usuarios[i].id+"</td>\n" +
-      "               <td>"+usuarios[i].nombre+"</td>\n" +
-      "               <td>"+usuarios[i].apellido+"</td>\n" +
-      "               <td>"+usuarios[i].email+"</td>\n" +
+      "               <td>"+aux.id+"</td>\n" +
+      "               <td>"+aux.nombre+"</td>\n" +
+      "               <td>"+aux.apellido+"</td>\n" +
+      "               <td>"+aux.email+"</td>\n" +
       "               <td class=\"d-flex justify-content-around\">" +
       "                     <buton class=\"btn btn-danger\">Borrar</buton>" +
       "                     <buton class=\"btn btn-warning\">Actualizar</buton>" +
