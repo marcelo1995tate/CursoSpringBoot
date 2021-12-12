@@ -18,7 +18,7 @@ async function cargarUsuarios() {
 for(var aux in usuarios){
   index+=1;
   usuario+= "<tr class=\"text-center\">\n" +
-      "               <td>"+aux.id+"</td>\n" +
+      "               <td>"+aux[0].id+"</td>\n" +
       "               <td>"+aux.email+"</td>\n" +
       "               <td>"+aux.password+"</td>\n" +
       "               <td>61</td>\n" +
