@@ -53,15 +53,21 @@ public class UsuarioController {
     public List<Usuario> findAllUsuario(){
         List<Usuario> usuarios= new ArrayList<Usuario>();
         Usuario usuario=new Usuario();
+        usuario.setId(1l);
         usuario.setNombre("Marcelo");
+        usuario.setApellido("ZELAYA");
         usuario.setEmail("marcelo@gmail.com");
         usuario.setPassword("123456789");
         Usuario usuario2=new Usuario();
+        usuario2.setId(2l);
         usuario2.setNombre("Andres");
+        usuario2.setApellido("ZELAYA");
         usuario2.setEmail("andres@gmail.com");
         usuario2.setPassword("abcdefghi");
         Usuario usuario3=new Usuario();
+        usuario3.setId(3l);
         usuario3.setNombre("Zelaya");
+        usuario3.setApellido("ZELAYA");
         usuario3.setEmail("zelaya95@gmail.com");
         usuario3.setPassword("zxcvbnm");
 
