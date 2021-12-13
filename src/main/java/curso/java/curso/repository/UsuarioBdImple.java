@@ -31,14 +31,23 @@ public class UsuarioBdImple implements UsuarioDB{
         Usuario usuario=em.find(Usuario.class, id);
         em.remove(usuario);
     }
-
     @Override
     public void updateUsuario(Usuario usuario) {
 
     }
-
     @Override
     public void saveUsuario(Usuario usuario) {
         em.merge(usuario);
+    }
+
+    @Override
+    public boolean verificarUsuarioLogin(Usuario usuario) {
+        String query="FROM Usuario u WHERE u.email=:email AND u.password=:password";
+        List <Usuario> usuarios= em.createQuery(query)
+                .setParameter("email",usuario.getEmail())
+                .setParameter("password",usuario.getPassword())
+                .getResultList();
+
+        return !usuarios.isEmpty();
     }
 }

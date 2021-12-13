@@ -11,4 +11,5 @@ public interface UsuarioDB {
     void deleteUsuario(Long id);
     void updateUsuario(Usuario usuario);
     void saveUsuario(Usuario usuario);
+    boolean verificarUsuarioLogin(Usuario usuario);
 }

@@ -36,7 +36,6 @@ for(let aux of usuarios)
       "          </tr>";
 }
   document.querySelector("#usuarios tbody").outerHTML=usuario;
-  console.log(usuarios);
 }
 async function eliminarUsuario(id) {
   if(confirm('¿Desea eliminar este usuario?')){
