@@ -10,4 +10,5 @@ public interface UsuarioDB {
     Usuario getUsuario(Long id);
     void deleteUsuario(Long id);
     void updateUsuario(Usuario usuario);
+    void saveUsuario(Usuario usuario);
 }

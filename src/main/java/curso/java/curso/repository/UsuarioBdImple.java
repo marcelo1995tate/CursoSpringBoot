@@ -23,7 +23,7 @@ public class UsuarioBdImple implements UsuarioDB{
 
     @Override
     public Usuario getUsuario(Long id) {
-        return null;
+        return em.find(Usuario.class, id);
     }
 
     @Override
@@ -35,5 +35,10 @@ public class UsuarioBdImple implements UsuarioDB{
     @Override
     public void updateUsuario(Usuario usuario) {
 
+    }
+
+    @Override
+    public void saveUsuario(Usuario usuario) {
+        em.merge(usuario);
     }
 }
