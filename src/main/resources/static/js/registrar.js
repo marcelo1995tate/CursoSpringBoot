@@ -41,7 +41,6 @@ async function saveUsuarios() {
     datos.email=email;
     datos.telefono=telefono;
     datos.password=password
-    alert(JSON.stringify(datos))
     const request = await fetch('http://localhost:8080/usuario/usuario-save', {
         method: 'POST',
         headers: {
