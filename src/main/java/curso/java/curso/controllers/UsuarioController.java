@@ -4,6 +4,10 @@ import curso.java.curso.Model.Usuario;
 import curso.java.curso.repository.UsuarioDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import util.Hash;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 
@@ -15,8 +19,12 @@ public class UsuarioController {
 
     @RequestMapping (value = "usuario-save",method = RequestMethod.POST)
     public void saveUsuario(@RequestBody Usuario usuario){
+        usuario.setPassword(Hash.MD5(usuario.getPassword()));
         usuarioDB.saveUsuario(usuario);
+
+
     }
+
 
     @RequestMapping (value = "usuario-delete/{id}",method = RequestMethod.DELETE)
     public void deleteUsuario(@PathVariable Long id){
@@ -34,4 +42,9 @@ public class UsuarioController {
     public Usuario findUsuario(@PathVariable Long id){
         return usuarioDB.getUsuario(id);
     }
+
+
+
+
+
 }

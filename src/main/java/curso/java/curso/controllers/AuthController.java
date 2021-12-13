@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import util.Hash;
 
 @RestController
 @RequestMapping(value = "login")
@@ -16,7 +17,7 @@ public class AuthController {
 
     @RequestMapping(value = "usuario-login",method = RequestMethod.POST)
     public String loginUsuario(@RequestBody Usuario usuario){
-        System.out.println(usuario.getEmail());
+        usuario.setPassword(Hash.MD5(usuario.getPassword()));
         if(usuarioDB.verificarUsuarioLogin(usuario)){
             return "OK";
         }

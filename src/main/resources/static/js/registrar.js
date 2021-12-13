@@ -49,4 +49,5 @@ async function saveUsuarios() {
         },
         body: JSON.stringify(datos)
     });
+    location.reload();
 }
