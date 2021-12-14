@@ -19,10 +19,8 @@ public class UsuarioController {
 
     @RequestMapping (value = "usuario-save",method = RequestMethod.POST)
     public void saveUsuario(@RequestBody Usuario usuario){
-        usuario.setPassword(Hash.MD5(usuario.getPassword()));
+        usuario.setPassword(Hash.argon2Hash(usuario.getPassword()));
         usuarioDB.saveUsuario(usuario);
-
-
     }
 
 

@@ -17,7 +17,6 @@ public class AuthController {
 
     @RequestMapping(value = "usuario-login",method = RequestMethod.POST)
     public String loginUsuario(@RequestBody Usuario usuario){
-        usuario.setPassword(Hash.MD5(usuario.getPassword()));
         if(usuarioDB.verificarUsuarioLogin(usuario)){
             return "OK";
         }

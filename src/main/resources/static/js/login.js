@@ -27,5 +27,9 @@ async function loginUsuarios() {
         },
         body: JSON.stringify(datos)
     });
-    request.json()
+   const respuesta= await request.text()
+if(respuesta=="OK")
+    window.location.href="usuarios.html";
+else
+    alert("Credenciales no validas");
 }

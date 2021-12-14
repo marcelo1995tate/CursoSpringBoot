@@ -49,5 +49,6 @@ async function saveUsuarios() {
         },
         body: JSON.stringify(datos)
     });
-    location.reload();
+    alert("La cuenta fue creada correctamente")
+    window.location.href="login.html";
 }
